@@ -1,0 +1,78 @@
+/* App.css */
+
+/* Mobile Menu Animations */
+@keyframes slideDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  /* Desktop Menu Animations */
+  @keyframes navLinkFade {
+    from {
+      opacity: 0;
+      transform: translateX(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  /* Responsive Navbar Styles */
+  .navbar-mobile {
+    animation: slideDown 0.4s ease forwards;
+  }
+  
+  .navbar-desktop {
+    animation: fadeIn 0.5s ease-out;
+  }
+  
+  .nav-item {
+    animation: navLinkFade 0.5s ease forwards;
+  }
+  
+  /* Mobile-specific styles */
+  @media (max-width: 991.98px) {
+    .navbar-collapse {
+      animation: slideDown 0.3s ease-out;
+    }
+    
+    .nav-link {
+      transition: all 0.3s ease;
+    }
+    
+    .nav-link:hover {
+      padding-left: 1rem;
+      background-color: rgba(221, 161, 94, 0.1);
+    }
+    
+    .dropdown-menu {
+      animation: slideDown 0.25s ease-out;
+    }
+  }
+  
+  /* Desktop-specific styles */
+  @media (min-width: 992px) {
+    .navbar-content {
+      animation: fadeIn 0.4s ease-out;
+    }
+    
+    .nav-item {
+      transition: all 0.2s ease;
+    }
+    
+    .nav-item:hover {
+      transform: translateY(-2px);
+    }
+  }
