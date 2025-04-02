@@ -2,8 +2,13 @@ import React from "react";
 import image from "../../assets/IMG/sessionimg.png";
 import { LuCalendarDays } from "react-icons/lu";
 import { IoLocationOutline } from "react-icons/io5";
+import { useNavigate } from 'react-router-dom';
 
 const WorkshopEvents = () => {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate('/book-session'); 
+  };
   const data = [
     {
       image: image,
@@ -43,16 +48,16 @@ const WorkshopEvents = () => {
         location: "Osho Tapoban, Nagarjun Hills, Kathmandu",
         desc: "9-Day Osho Mystic Rose Therapy: Laugh, cry and let the wounds of the past melt into silence. Osho Mystic Rose gives you this opportunity. It is a process that lasts...",
         date: "Mon 24",
-        btn: "Book ession",
+        btn: "Book Session",
       },
   ];
   return (
     <>
-    <div className=" my-5">
-      <div className="row justify-content-center">
+    <div className="container gx-0">
+      <div className=" col-lg-12">
         {data.map((item, index) => (
           <div key={index} className="col-12 col-lg-10 mb-4 p-3 rounded shadow-sm">
-            <div className="row d-flex g-4 align-items-center">
+            <div className="row align-items-center">
               {/* Image Section (4 columns) */}
               <div className="col-12 col-md-4 col-sm-4">
                 <img
@@ -99,7 +104,7 @@ const WorkshopEvents = () => {
                          style={{ background: "#65132A", }}>
                       {item.date}
                     </div>
-                    <button className="btn btn-outline-danger rounded-5 px-3 fw-bold">
+                    <button className="btn btn-outline-danger rounded-5 px-3 fw-bold"  onClick={handleClick}>
                       {item.btn}
                     </button>
                   </div>

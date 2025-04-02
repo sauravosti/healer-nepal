@@ -32,8 +32,8 @@ const SearchWidget = ({ setSearch }) => {
   };
 
   return (
-    <div className="container-fluid p-1">
-      <form onSubmit={handleSearch} className="w-50">
+    <div className="container-fluid">
+      <form onSubmit={handleSearch} className="p-5">
         <div className="row g-0 align-items-center">
           <div className="col-12 position-relative">
             <input

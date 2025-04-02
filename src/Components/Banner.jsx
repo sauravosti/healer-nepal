@@ -4,7 +4,7 @@ import img from "../assets/IMG/imageEvent.png"
 
 export const Banner = ({ pageTitle }) => {
   const bannerStyle = {
-    height: "55vh",
+    height: "85vh",
     backgroundImage: `url(${img})`,
     backgroundSize: "cover",
     backgroundPosition: "center",

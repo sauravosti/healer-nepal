@@ -8,17 +8,18 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <>
-      <div
-        className="pt-5"
+    <div className="">
+    <div
+        className=" pt-5"
         style={{
           fontFamily: "Poppins",
-          backgroundImage:  `url('src/assets/IMG/footerimg.png')`
+          backgroundImage:  `url('src/assets/IMG/footerimg.png')`,
         }}
       >
         <div className="row mt-5 pt-5">
           <div className=" col-sm-1 col-md-2 col-lg-3">
             <div
-              className=" d-flex mt-5 align-items-center gap-2 text-md-end fw-bold p-2"
+              className=" d-flex mt-5 align-items-center gap-2 text-md-end fw-bold p-2 "
               style={{ color: "#65132A" }}
             >
               <a href="">
@@ -53,16 +54,16 @@ const Footer = () => {
           </div>
           <div
             className="col page-link fw-bold">
-            <div className="">
-              <li className="mb-2">Home</li>
-              <li className="mb-2">Blogs</li>
-              <li className="mb-2">Events</li>
-              <li className="mb-2">Our Healer</li>
+            <div className="list-unstyled">
+              <li className="mb-3">Home</li>
+              <li className="mb-3">Blogs</li>
+              <li className="mb-3">Events</li>
+              <li className="">Our Healer</li>
             </div>
           </div>
           <div className="col-sm-12 col-md-7 col-lg-3">
             <div className="text-start">
-            <h5>Contact Us</h5>
+            <h3>Contact Us</h3>
               <a tomail=" ">example@gmail.com</a>
               <p className="fw-bold mb-1 mt-1">
                 Nagarjun Hills, Kathmandu, Nepal
@@ -70,9 +71,9 @@ const Footer = () => {
               <p className="fw-bold mb-3">+977-9847807082</p>
             </div>
           </div>
-          <div className="col-sm-3 col-md-5 col-lg-4">  
+          <div className="col-sm-3 col-md-5 col-lg-3">  
             <form>
-            <h5>Subscribe</h5>
+            <h3>Subscribe</h3>
             <span className=" text-black">
               Enter your email to get notified about our new update
             </span>
@@ -114,6 +115,9 @@ const Footer = () => {
           </footer>
         </div>
       </div>
+
+    </div>
+     
     </>
   );
 };

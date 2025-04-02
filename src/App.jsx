@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Events from './Components/Session Events/Events';
+import BookSession from './Components/Session Events/BookSession';
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
     <Router>
       <Routes>
       <Route path="events" element={<Events />} />
+      <Route path='book-session' element={<BookSession />} />
       </Routes>
     </Router>
     {/* <Events /> */}

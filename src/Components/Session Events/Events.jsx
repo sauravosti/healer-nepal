@@ -6,11 +6,12 @@ import Slider from "react-slick";
 import { EventCarousel } from "./EventCarousel";
 import SearchWidget from "./SearchWidget";
 import WorkshopEvents from "./WorkshopEvents";
+import { Link } from "react-router-dom";
 
 const Events = () => {
   return (
     <>
-      <div
+      <div className=""
         style={{
           background: "#FFF7F0",
         }}
@@ -20,27 +21,27 @@ const Events = () => {
         </div>
 
         <div
-          className="container m-5 d-flex flex-wrap col-5 col-md-8 col-lg-12"
+          className="py-5 d-flex flex-wrap col-6 col-md-8 col-sm-4 col-lg-12 justify-content-center"
           style={{
             background: "#FFF7F0",
           }}
         >
           <div
-            className="rounded-4 img-fluid w-100"
+            className="rounded-4 card d-flex justify-items-center card-fluid col-lg-9 col-md-12"
             style={{
               backgroundImage: `url('src/assets/IMG/comingEvents.png')`,
               fontFamily: "Poppins",
             }}
           >
             <div className="d-flex fw-bold">
-              <span
+              <Link to="/book-session"
                 className="px-2 py-1 rounded-5 mt-5 ms-5 text-white"
                 style={{
                   background: "#DDA15E",
                 }}
               >
                 Upcoming Events
-              </span>
+              </Link>
             </div>
             <div className="text-white pt-5">
               <p
@@ -71,39 +72,43 @@ const Events = () => {
           </div>
         </div>
         {/* <EventCarousel /> */}
- <div className="d-flex shadow rounded-5 m-3 fw-bold ">
-  <div className="col-12 col-lg-8 col-sm-4 d-flex align-items-center justify-content-center ">
-    <span className="m-3 m-sm-1 m-lg-3 m-md-3">Workshops & Special Events</span>
-    <svg width="2" height="40%" className="svg-line">
+ <div className="container my-4">
+  <div className="d-flex fw-bold border shadow flex-wrap w-100 mx-0 col-12 col-lg-6 col-sm-6 align-items-center justify-content-between ">
+   
+    <div className="d-flex align-items-center justify-content-around">
+    <p className=" m-sm-1 m-lg-3 m-md-3">Workshops & Special Events</p>
+    <svg width="2" height="20%" className="svg-line">
       <line
         x1="0"
-        y1="25%"
+        y1="40%"
         x2="0"
-        y2="70%"
+        y2="60%"
         stroke="#00000080"
-        strokeWidth="2"
+        strokeWidth="4"
       />
     </svg>
-    <span className="m-3 m-sm-1 m-lg-3 m-md-3">Healing Sessions</span>
-    <svg width="2" height="40%" className="svg-line">
+    <p className=" m-sm-1 m-lg-3 m-md-3">Healing Sessions</p>
+    <svg width="2" height="20%" className="svg-line">
       <line
         x1="0"
-        y1="25%"
+        y1="40%"
         x2="0"
-        y2="70%"
+        y2="60%"
         stroke="#00000080"
-        strokeWidth="2"
+        strokeWidth="4"
       />
     </svg>
-    <span className="m-3 m-sm-1 m-lg-3 m-md-3">Intuitive Readings</span>
-  </div>
-
-  <div className="d-flex align-items-center ps-0 ps-sm-3 ps-md-1"
+    <p className=" m-sm-1 m-lg-3 m-md-3">Intuitive Readings</p>
+      </div>
+    <div className=" d-flex align-items-end ps-0 ps-sm-5 ps-md-5"
   style={{
-    width:"35rem"
+    width:"30rem"
   }}>
     <SearchWidget />
   </div>
+  </div>
+
+  
 </div>
 <WorkshopEvents />
       </div>

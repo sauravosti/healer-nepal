@@ -8,7 +8,7 @@ const Navbar = () => {
     <>
       <nav className="navbar navbar-expand-lg bg-body-tertiary d-flex flex-wrap border container-fluid col-6 col-sm-6 col-md-9 col-lg-12 ms-2"
       style={{
-        width:"1210px"
+        width:"100%"
       }}>
    
           <button
