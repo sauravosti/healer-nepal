@@ -1,5 +1,3 @@
-/* App.css */
-
 /* Mobile Menu Animations */
 @keyframes slideDown {
     0% {
@@ -17,7 +15,7 @@
     to { opacity: 1; }
   }
   
-  /* Desktop Menu Animations */
+  /* desktop menu animations */
   @keyframes navLinkFade {
     from {
       opacity: 0;
@@ -41,6 +39,34 @@
   .nav-item {
     animation: navLinkFade 0.5s ease forwards;
   }
+
+  /* navbar items hover & underkine animation */
+
+  .nav-link {
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: #65132A;
+    transition: width 0.3s ease-in-out;
+  }
+  
+  .nav-link:hover::after {
+    width: 100%;
+  }
+  
+  .active-link::after {
+    width: 100%;
+  }
+  
   
   /* Mobile-specific styles */
   @media (max-width: 991.98px) {
@@ -76,3 +102,25 @@
       transform: translateY(-2px);
     }
   }
+
+  /* css for book-session sidebar */
+  .bg-custom {
+    background-color: #65132AB2;
+  }
+
+  /* css for bar of session & events */
+.hover-bg:hover {
+  color: #65132A !important; 
+}
+
+.click-underline:active, .click-underline:focus {
+  text-decoration: underline !important;
+}
+
+.transition {
+  transition: color 0.2s ease-in-out;
+}
+
+.text-custom {
+  color: #65132A;
+}

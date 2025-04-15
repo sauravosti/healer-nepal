@@ -44,7 +44,7 @@ export const Banner = ({ pageTitle }) => {
   };
 
   return (
-    <div style={bannerStyle}>
+    <div className="banner " style={bannerStyle}>
       <div style={overlayStyle}></div>
 
       {/* Breadcrumb (Centered at Top) */}

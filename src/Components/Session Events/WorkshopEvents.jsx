@@ -2,7 +2,7 @@ import React from "react";
 import image from "../../assets/IMG/sessionimg.png";
 import { LuCalendarDays } from "react-icons/lu";
 import { IoLocationOutline } from "react-icons/io5";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 const WorkshopEvents = () => {
   const navigate = useNavigate();
@@ -11,6 +11,7 @@ const WorkshopEvents = () => {
   };
   const data = [
     {
+      id: 1,
       image: image,
       duration: "May 1 - May 5, 2025",
       time: "10:00 AM - 4:00 PM",
@@ -21,6 +22,7 @@ const WorkshopEvents = () => {
       btn: "Book Session",
     },
     {
+      id: 2,
       image: image,
       duration: "May 1 - May 5, 2025",
       time: "10:00 AM - 4:00 PM",
@@ -28,9 +30,10 @@ const WorkshopEvents = () => {
       location: "Osho Tapoban, Nagarjun Hills, Kathmandu",
       desc: "9-Day Osho Mystic Rose Therapy: Laugh, cry and let the wounds of the past melt into silence. Osho Mystic Rose gives you this opportunity. It is a process that lasts...",
       date: "Mon 24",
-      btn: "Book ession",
+      btn: "Book Session",
     },
     {
+        id: 3,
         image: image,
         duration: "May 1 - May 5, 2025",
         time: "10:00 AM - 4:00 PM",
@@ -41,6 +44,7 @@ const WorkshopEvents = () => {
         btn: "Book Session",
       },
       {
+        id: 4,
         image: image,
         duration: "May 1 - May 5, 2025",
         time: "10:00 AM - 4:00 PM",
@@ -53,68 +57,97 @@ const WorkshopEvents = () => {
   ];
   return (
     <>
-    <div className="container gx-0">
-      <div className=" col-lg-12">
-        {data.map((item, index) => (
-          <div key={index} className="col-12 col-lg-10 mb-4 p-3 rounded shadow-sm">
-            <div className="row align-items-center">
-              {/* Image Section (4 columns) */}
-              <div className="col-12 col-md-4 col-sm-4">
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="img-fluid rounded "
-                />
-              </div>
-              
-              {/* Description Section (8 columns) */}
-              <div className=" d-flex justify-content-center col-12 col-lg-8 col-md-8 col-sm-4">
-                <div className="col d-flex flex-wrap col-lg-9 col-md-3 p-3 rounded">
-                  <p className=" fw-bold p-1 rounded-3 text-center"
+   <div className="container-fluid px-0 px-sm-3">
+  <div className="row justify-content-center mx-0">
+    {data.map((item) => (
+      <div 
+        key={item.id} 
+        className="col-12 col-lg-10 col-md-11 col-sm-12 mb-4 p-0"
+      >
+        <div className="container-fluid d-flex flex-wrap p-3 rounded shadow-sm">
+          {/* img section */}
+          <div className="col-12 col-md-4 col-sm-12 p-0 mb-3 mb-md-0">
+            <img
+              src={item.image}
+              alt={item.title}
+              className="img-fluid rounded w-100"
+              style={{ height: "100%", minHeight: "250px", objectFit: "cover" }}
+            />
+          </div>
+          
+          {/* content */}
+          <div className="col-12 col-md-8 col-sm-12 d-flex flex-wrap ps-md-3">
+           
+            <div className="col-12 col-sm-8 pe-sm-3">
+              {/* date & time */}
+              <div className="w-100 mb-3">
+                <p className="fw-bold p-2 rounded-3 text-center d-flex justify-content-center align-items-center flex-wrap"
                   style={{
-                    border:"2px solid #000",
+                    border: "2px solid #000",
+                    fontSize: "clamp(0.8rem, 1.5vw, 1rem)"
                   }}>
-                    <LuCalendarDays size={20} className="me-1" />
-                    {item.duration}
-                    {" | "}
-                   {item.time}
-                  </p>
+                  <LuCalendarDays size={20} className="me-1" />
+                  {item.duration}
+                  <span className="mx-1">|</span>
+                  {item.time}
+                </p>
+              </div>
 
-                  <h4 className="fw-bold">{item.title}</h4>
-                  <p className="d-flex align-items-center">
-                    <IoLocationOutline size={20} className="me-2" />
-                    {item.location}
-                  </p>
-                  <p>{item.desc}</p>
-                  </div>
-                  <div className=" col d-flex col-lg-4 col-md-4 col-sm-4">
-                  <svg width="2" height="100%" className="svg-line">
-                    <line
-                      x1="0"
-                      y1="10%"
-                      x2="0"
-                      y2="100%"
-                      stroke="#00000080"
-                      strokeWidth="2"
-                    />
-                  </svg>
-                   {/* Date & Button */}
-                   <div className=" text-center">
-                    <div className=" p-3 px-2 m-5 mb-3 fw-bold text-white rounded"
-                         style={{ background: "#65132A", }}>
-                      {item.date}
-                    </div>
-                    <button className="btn btn-outline-danger rounded-5 px-3 fw-bold"  onClick={handleClick}>
-                      {item.btn}
-                    </button>
-                  </div>
+              {/* title */}
+              <h4 className="fw-bold mb-2" style={{ fontSize: "clamp(1.1rem, 2vw, 1.5rem)" }}>
+                {item.title}
+              </h4>
+
+              {/* location */}
+              <p className="d-flex align-items-center mb-2">
+                <IoLocationOutline size={20} className="me-2" />
+                <span style={{ fontSize: "1.1rem" }}>
+                  {item.location}
+                </span>
+              </p>
+
+              {/* desc */}
+              <p className="mb-3" style={{ fontSize: "1.13rem" }}>
+                {item.desc}
+              </p>
+            </div>
+
+            {/* date and btn */}
+            <div className="col-12 col-sm-4 d-flex flex-sm-column align-items-center justify-content-center position-relative">
+              {/* shows on sm+ screens */}
+              <div className="d-none d-sm-block position-absolute start-0 h-100" 
+                   style={{ width: "2px", backgroundColor: "rgba(0,0,0,0.5)" }}></div>
+              
+              {/* shows on xs screens */}
+              <div className="d-block d-sm-none my-2">
+                <hr style={{ borderTop: "2px solid rgba(0,0,0,0.5)" }} />
+              </div>
+
+              {/* date & btn */}
+              <div className="d-flex flex-column align-items-center px-4">
+                <div className="p-2 w-50 text-center mb-3 fw-bold text-white rounded"
+                     style={{ 
+                       background: "#65132A",
+                     }}>
+                  {item.date}
                 </div>
+                <Link 
+                  to="/workshop-book/:id"  
+                  state={{ workshop: item }} 
+                  className="btn btn-outline-danger rounded-5 px-3 fw-bold"
+                  style={{ fontSize: "1.1rem", whiteSpace: "nowrap" }}
+                  onClick={handleClick}
+                >
+                  {item.btn}
+                </Link>
               </div>
             </div>
           </div>
-        ))}
+        </div>
       </div>
-    </div>
+    ))}
+  </div>
+</div>
     </>
   );
 };

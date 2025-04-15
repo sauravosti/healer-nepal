@@ -7,110 +7,110 @@ import { EventCarousel } from "./EventCarousel";
 import SearchWidget from "./SearchWidget";
 import WorkshopEvents from "./WorkshopEvents";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Events = () => {
   return (
     <>
-      <div className=""
+      <div
         style={{
           background: "#FFF7F0",
         }}
       >
-        <div className="img-fluid">
+        <div>
           <Banner pageTitle="All Events" />
         </div>
 
+        {/* card bg img btn */}
         <div
-          className="py-5 d-flex flex-wrap col-6 col-md-8 col-sm-4 col-lg-12 justify-content-center"
-          style={{
-            background: "#FFF7F0",
-          }}
+          className="p-4 p-sm-4 p-md-5 d-flex flex-wrap justify-content-center"
+          style={{ background: "#FFF7F0" }}
         >
           <div
-            className="rounded-4 card d-flex justify-items-center card-fluid col-lg-9 col-md-12"
+            className="rounded-4 col-12 col-sm-11 col-md-10 col-lg-9 col-xl-10 p-4 p-sm-5"
             style={{
               backgroundImage: `url('src/assets/IMG/comingEvents.png')`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
               fontFamily: "Poppins",
             }}
           >
-            <div className="d-flex fw-bold">
-              <Link to="/book-session"
-                className="px-2 py-1 rounded-5 mt-5 ms-5 text-white"
-                style={{
-                  background: "#DDA15E",
-                }}
-              >
-                Upcoming Events
-              </Link>
-            </div>
-            <div className="text-white pt-5">
-              <p
-                className=" rounded-5 p-1 ms-5 mt-5"
-                style={{
-                  border: "2px solid white",
-                  width: "200px",
-                }}
-              >
-                <LuCalendarDays /> May 1 - May 5, 2025
-              </p>
-            </div>
-            <div
-              className="text-white text-start ms-5 pt-2 pb-1"
-              style={{
-                width: "450px",
-              }}
-            >
-              <h2 className="fw-bold">7 Days Neo Vipassana Retreat Events</h2>
-            </div>
-            <div className="text-white text-start ms-5 fs-6 w-50">
-              <p>
-                {" "}
-                <IoLocationOutline size={20} /> Osho Tapoban, Nagarjun Hills,
-                Kathmandu
-              </p>
+            <div className="p-3 p-sm-4 p-md-5">
+              {/* btn */}
+              <div className="d-flex fw-bold">
+                <Link
+                  to="/book-session"
+                  className="px-3 py-2 fw-bold rounded-5 text-white text-decoration-none"
+                  style={{ background: "#DDA15E" }}
+                >
+                  Upcoming Events
+                </Link>
+              </div>
+
+              {/* date */}
+              <div className="text-white pt-4 pt-sm-5 ms-2 ms-sm-4">
+                <p
+                  className="rounded-5 p-1 mb-3"
+                  style={{
+                    border: "2px solid white",
+                    maxWidth: "fit-content",
+                  }}
+                >
+                  <LuCalendarDays /> May 1 - May 5, 2025
+                </p>
+              </div>
+
+              {/* title */}
+              <div className="text-white text-start ms-2 ms-sm-4 pb-1">
+                <h2 className="fw-bold" style={{ maxWidth: "90%" }}>
+                  7 Days Neo Vipassana Retreat Events
+                </h2>
+              </div>
+
+              {/* location */}
+              <div className="text-white text-start ms-2 ms-sm-4 fs-6">
+                <p className="mb-0">
+                  <IoLocationOutline size={20} /> Osho Tapoban, Nagarjun Hills,
+                  Kathmandu
+                </p>
+              </div>
             </div>
           </div>
         </div>
-        {/* <EventCarousel /> */}
- <div className="container my-4">
-  <div className="d-flex fw-bold border shadow flex-wrap w-100 mx-0 col-12 col-lg-6 col-sm-6 align-items-center justify-content-between ">
-   
-    <div className="d-flex align-items-center justify-content-around">
-    <p className=" m-sm-1 m-lg-3 m-md-3">Workshops & Special Events</p>
-    <svg width="2" height="20%" className="svg-line">
-      <line
-        x1="0"
-        y1="40%"
-        x2="0"
-        y2="60%"
-        stroke="#00000080"
-        strokeWidth="4"
-      />
-    </svg>
-    <p className=" m-sm-1 m-lg-3 m-md-3">Healing Sessions</p>
-    <svg width="2" height="20%" className="svg-line">
-      <line
-        x1="0"
-        y1="40%"
-        x2="0"
-        y2="60%"
-        stroke="#00000080"
-        strokeWidth="4"
-      />
-    </svg>
-    <p className=" m-sm-1 m-lg-3 m-md-3">Intuitive Readings</p>
-      </div>
-    <div className=" d-flex align-items-end ps-0 ps-sm-5 ps-md-5"
-  style={{
-    width:"30rem"
-  }}>
-    <SearchWidget />
-  </div>
-  </div>
 
-  
-</div>
-<WorkshopEvents />
+        <div className="container-fluid my-2 my-md-4 px-0 px-sm-2">
+          <div className="d-flex justify-content-center">
+            <div className="d-flex flex-column flex-sm-nowrap flex-md-row align-items-center justify-content-between border shadow-sm rounded-5 p-4 py-2 mb-3 w-75">
+              {/* items */}
+              <div className="d-flex flex-wrap justify-content-center align-items-center text-center gap-3 flex-wrap gap-xl-4 gap-lg-3 gap-md-2 gap-sm-2">
+                <p className="mb-0 fs-5 fw-bold">Workshops & Special Events</p>
+                <span className="">|</span>
+
+                <Link
+                  to="/book-session"
+                  className="fs-5 text-decoration-none text-black fw-bold hover-bg click-underline transition"
+                >
+                  Healing Sessions
+                </Link>
+                <span className="">|</span>
+
+                <Link
+                  to="/book-session"
+                  className="fs-5 text-decoration-none text-black fw-bold hover-bg click-underline transition"
+                >
+                  Intuitive Readings
+                </Link>
+              </div>
+
+              {/* search btn */}
+              <div className="mt-0 mt-md-0">
+                <SearchWidget />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <WorkshopEvents />
       </div>
     </>
   );
